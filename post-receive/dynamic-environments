@@ -78,4 +78,8 @@ $stdin.each_line do |line|
       %x{git clone #{SOURCE_REPOSITORY} #{environment_path} --branch #{branchname}}
     end
   end
+  if File.exists? environment_path + '/.gitmodules'
+    Dir.chdir environment_path
+    %x{git submodule update --init}
+  end
 end
