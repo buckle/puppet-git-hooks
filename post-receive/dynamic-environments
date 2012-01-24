@@ -77,7 +77,8 @@ $stdin.each_line do |line|
     end
   end
   if File.exists? environment_path + '/.gitmodules'
+    puts %Q{Found submodules in #{environment_name}, recursively updating.}
     Dir.chdir environment_path
-    %x{git submodule update --init}
+    %x{git submodule update --init --recursive}
   end
 end
