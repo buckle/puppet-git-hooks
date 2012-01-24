@@ -11,7 +11,6 @@ ENVIRONMENT_BASEDIR = "/etc/puppet/environments"
 #SOURCE_REPOSITORY = File.expand_path(ENV['GIT_DIR'])
 SOURCE_REPOSITORY = 'git@git.wsd.bucklehq.com:puppet.git'
 
-
 # Mapping of branches to directories.  In many cases, the master branch is 
 # checked out to the 'development' environment.
 BRANCH_MAP = {
@@ -43,6 +42,8 @@ $stdin.each_line do |line|
     puts %Q{Branch "#{branchname}" contains non-word characters, ignoring it.}
     next
   end
+
+  environment_path = "#{ENVIRONMENT_BASEDIR}/#{branchname}"
 
   if BRANCH_MAP[branchname] != nil
     environment_name = BRANCH_MAP[branchname]
