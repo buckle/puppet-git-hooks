@@ -9,7 +9,7 @@ ENVIRONMENT_BASEDIR = "/etc/puppet/environments"
 # clone from a non-local repository, set this to the URL of the repository,
 # such as git@git.host:puppet.git
 #SOURCE_REPOSITORY = File.expand_path(ENV['GIT_DIR'])
-SOURCE_REPOSITORY = 'git@git.wsd.bucklehq.com:puppet.git'
+SOURCE_REPOSITORY = 'git@git.wsd.bucklehq.com:puppet3.git'
 
 # Mapping of branches to directories.  In many cases, the master branch is 
 # checked out to the 'development' environment.
